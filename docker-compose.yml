@@ -1,0 +1,13 @@
+version: '2'
+services:
+ api-reference:
+    image: registry.onekloud.net/slate:latest
+    container_name: api-reference
+    restart: always
+    environment:
+      ENV: prod
+    ports:
+     - 10083:4567
+    labels:
+     - "traefik.backend=onekloudcom"
+     - "traefik.frontend.rule=Host:onekloud.com"
